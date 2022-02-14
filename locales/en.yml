@@ -1,0 +1,93 @@
+name: 🇬🇧 English
+start:
+  text: |
+    Hello!
+
+    This is a bot for buying and selling your products.
+  keys:
+    wallet: Wallet
+    buy: Buy
+    sell: Sell
+languageSet: Language set
+wallet:
+  text: |
+    💸 <b>Wallet</b>
+
+    <a href="https://ton.org/"><b>Toncoin</b></a>: ${balance.TON} TON
+
+    <a href="https://tether.to/"><b>Tether</b></a>: ${balance.USDT} USDT
+
+    <a href="https://bitcoin.org/"><b>Bitcoin</b></a>: ${balance.BTC} BTC
+
+    <a href="https://binance.org/"><b>Binance Coin</b></a>: ${balance.BNB} BNB
+
+    <a href="https://www.binance.com/en/busd"><b>Binance USD</b></a>: ${balance.BUSD} BUSD
+
+    · <a href="https://www.centre.io/usdc"><b>USD Coin</b></a>: ${balance.USDC} USDC
+  keys:
+    deposit: Top up
+    withdraw: Withdraw
+deposits:
+  error: Invalid amount.
+  text: Select the cryptocurrency to replenish the balance.
+  enter: Enter the amount to replenish the balance.
+  pay: Follow the link to top up your balance.
+  buttonPay: Top up
+  success: You have successfully topped up your balance with ${amount} ${currency}.
+withdraw:
+  error: Invalid amount.
+  text: Select the cryptocurrency to withdraw.
+  enter: Enter the amount to withdraw.
+  success: You have successfully withdrawn ${amount} ${currency}.
+sell:
+  text: |
+    Your items:
+
+    ${text}
+  missing: You have not added any items for sale yet.
+  keys:
+    add: Add a product
+  add:
+    text: Set all product parameters from the list below.
+    price:
+      text: Enter the price for the item.
+      success: You have successfully entered a price for the item.
+      error: Invalid product price.
+    currency:
+      text: Select a cryptocurrency.
+      success: You have successfully selected a cryptocurrency.
+    name:
+      text: Enter the name of the product.
+      success: You have successfully entered a product name.
+    description:
+      text: Enter a description of the product (you can add a picture).
+      error: You must enter a description.
+      success: You have successfully entered a product description.
+    secret:
+      text: Enter the secret text that will be given after the purchase.
+      success: You have successfully entered the secret text.
+    keys:
+      price: Price
+      currency: Cryptocurrency
+      name: Name
+      description: Description
+      publish: Publish
+      secret: Secret text
+    error: Not all options are set.
+    success: Item added successfully.
+buy:
+  missing: There are no products.
+  impossible: Impossible
+  purchase:
+    key: Buy
+    success: |
+      You have successfully purchased an item.
+
+      ${text}
+    notEnough: Not enough funds.
+  text: |
+    <a href='https://t.me/${username}?start=pr-${product.key}'><b>${product.name}</b></a>
+    ${product.price} ${product.currency}
+
+    ${product.description}
+back: back

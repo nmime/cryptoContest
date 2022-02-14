@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "@foile/crypto-pay-api": "^1.0.3",
+    "dotenv": "^10.0.0",
+    "fs": "^0.0.1-security",
+    "js-yaml": "^4.1.0",
+    "mongoose": "^6.1.0",
+    "telegraf": "github:NMIFUN/telegraf",
+    "telegraf-i18n": "^6.6.0",
+    "telegraf-ratelimit": "^2.0.0"
+  },
+  "name": "crypto.bot.contest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js"
+}
