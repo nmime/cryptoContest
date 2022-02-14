@@ -6,6 +6,7 @@ https://t.me/CryptoContestRBot
 $ npm i
 ```
 
+## Run
 ```bash
 $ npm start
 ```
