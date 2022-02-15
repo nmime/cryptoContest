@@ -53,10 +53,10 @@ module.exports = async (ctx) => {
       ]]).extra())
     }else if(ctx.state[0] === 'withdraw'){
       const amount = Number(ctx.message.text)
-      if(isNaN(amount) || amount <= 0  || ctx.user.balance[ctx.state[1]] < amount) return ctx.replyWithHTML(ctx.i18n.t('withdraw.error'))
+      if(isNaN(amount) || amount <= 0  || ctx.user.balances[ctx.state[1]] < amount) return ctx.replyWithHTML(ctx.i18n.t('withdraw.error'))
 
       const transfer = await cryptoPay.transfer(ctx.from.id, Assets[ctx.state[1]], amount, crypto.randomBytes(10).toString('hex'), { comment: `withdraw from @${ctx.botInfo.username}` })
-      ctx.user.balances[product.currency] -= amount
+      ctx.user.balances[ctx.state[1]] -= amount
       ctx.user.state = null
 
       return ctx.replyWithHTML(ctx.i18n.t('withdraw.success', {
