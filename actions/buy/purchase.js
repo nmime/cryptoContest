@@ -3,6 +3,8 @@ const Product = require('../../models/product')
 const User = require('../../models/user')
 
 module.exports = async (ctx) => {
+  await ctx.answerCbQuery()
+
   const product = await Product.findOne({ key: ctx.state[1] })
 
   if(product.price > ctx.user.balances[product.currency]) return ctx.answerCbQuery(ctx.i18n.t('buy.purchase.notEnough'))

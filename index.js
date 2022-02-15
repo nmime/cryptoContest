@@ -47,7 +47,7 @@ bot.on('message', require('./routers/message'))
 
 bot.on('callback_query', require('./routers/callbackQuery'))
 
-bot.on('my_chat_member', require('./actions/myChatMmber'))
+bot.on('my_chat_member', require('./actions/myChatMember'))
 
 bot.launch(
   (process.env.USE_WEBHOOK==='true') ? {

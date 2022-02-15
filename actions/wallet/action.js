@@ -7,6 +7,8 @@ const crypto = require('crypto')
 
 module.exports = async (ctx) => {
   if(ctx.updateType === 'callback_query') {
+    await ctx.answerCbQuery()
+
     if(!ctx.state[1]) return ctx.editMessageText(ctx.i18n.t(`${ctx.state[0]}.text`), Markup.inlineKeyboard([
       [
         Markup.callbackButton(`BTC`, `${ctx.state[0]}_BTC`),

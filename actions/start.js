@@ -2,6 +2,8 @@ const Markup = require('telegraf/markup')
 const Product = require('../models/product')
 
 module.exports = async (ctx) => {
+  if(ctx.callbackQuery) await ctx.answerCbQuery()
+  
   if(ctx.message?.text.split(' ')[1]?.split('-')[0] === 'pr'){
     const product = await Product.findOne({ key: ctx.message.text.split(' ')[1].split('-')[1] })
     const keyboard = Markup.inlineKeyboard([

@@ -1,6 +1,8 @@
 const Markup = require('telegraf/markup')
 
 module.exports = async (ctx) => {
+  if(ctx.callbackQuery) await ctx.answerCbQuery()
+
   const keyboard = Markup.inlineKeyboard([
     [
       Markup.callbackButton(ctx.i18n.t('wallet.keys.deposit'), `deposit`),
